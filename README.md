@@ -1,0 +1,18 @@
+# Submission 2 MLOPS : Machine Learning Pipeline - Hearth Failure
+
+Nama: Fachri Najm Noer Kartiman
+
+Username dicoding: fachrinnk
+
+| | Deskripsi |
+| ----------- | ----------- |
+| Dataset | [Hearth Failure dataset](https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction/data) |
+| Masalah | Penyakit kardiovaskular (PKV) merupakan penyebab kematian nomor 1 secara global, menelan sekitar 17,9 juta nyawa setiap tahunnya, yang menyumbang 31% dari semua kematian di seluruh dunia. Empat dari 5 kematian PKV disebabkan oleh serangan jantung dan stroke, dan sepertiga dari kematian ini terjadi secara prematur pada orang di bawah usia 70 tahun. Gagal jantung adalah kejadian umum yang disebabkan oleh PKV dan dataset ini mengandung 11 fitur yang dapat digunakan untuk memprediksi kemungkinan penyakit jantung.Orang dengan penyakit kardiovaskular atau yang berisiko tinggi terkena penyakit kardiovaskular (karena adanya satu atau lebih faktor risiko seperti hipertensi, diabetes, hiperlipidemia, atau penyakit yang sudah ada) memerlukan deteksi dan manajemen dini di mana model pembelajaran mesin dapat sangat membantu. |
+| Solusi machine learning | Dalam upaya mendeteksi dan mengelola penyakit kardiovaskular (PKV), umumnya pasien menjalani serangkaian tes dan pemeriksaan untuk mengukur faktor risiko yang terlibat. Namun, dokter seringkali tidak dapat langsung membuat kesimpulan definitif hanya dari hasil tes tersebut. Dengan menerapkan sistem klasifikasi PKV menggunakan teknologi machine learning, diharapkan dokter dapat memperoleh wawasan yang lebih komprehensif mengenai kondisi PKV pada pasien. Informasi yang diperoleh dari sistem ini kemudian dapat digunakan sebagai tambahan dalam pertimbangan dan perawatan pasien di masa yang akan datang, memungkinkan pendekatan yang lebih proaktif dan terarah dalam mengelola PKV serta faktor risiko yang terkait.|
+| Metode pengolahan | **Data Ingestion**: Data pasien yang memiliki penyakit DKV, yang dimuat ke dalam format yang ada. **Data Validation**: Data yang diambil diperiksa parameter statistik, data schema dan anomali data. **Data Preprocessing**: Data diproses untuk membersihkan, menyaring, dan mempersiapkannya untuk analisis. Dalam kasus ini digunakan *one_hot* untuk *Categorical features* dan *scaling* untuk numerical Features. **Model Tuning**: *Hyperparameter* model disesuaikan dan dioptimalkan untuk meningkatkan kinerja model. **Model Training**: Model machine learning dilatih menggunakan data yang telah diproses dan *Hyperparameter* yang telah di *tuning*.**Model Analysis dan Validation**: Model yang dilatih dievaluasi menggunakan data yang terpisah untuk mengukur kinerjanya. Metrik evaluasi seperti akurasi, presisi, *recall*, *F1-score*, dan *AUC* digunakan untuk mengevaluasi kualitas model.  |
+| Arsitektur model | *concatenate layers*,*dense layers*.Untuk model compile menggunakan optimizers Adam dengan  *learning_rate* hasil parameter tuning |
+| Metrik evaluasi | *AUC*, *Binary Accuracy*, *False Positives*, *True Positives*, *False Negatives*, *True Negatives* |
+| Performa model | Model yang dibuat memiliki binary_accuracy sekitar 99% dan val_binary_accuracy sekitar 84% setelah diuji pada file *fachrinnk-testing.ipynb* didapat kesimpulaan kalau  model dapat memprediksi dengan baik dengan data uji |
+| Opsi deployment | Dideploy menggunakan platform railway |
+| Web app | [Herath-Failure-classification](https://first-pipeline-production.up.railway.app/v1/models/cc-model/metadata)|
+| Monitoring | Pemantauan sistem ini menggunakan Prometheus dan Grafana. Fokus pada pemantauan jumlah *request* yang masuk ke sistem dan menampilkan status dari setiap permintaan yang dilakukan. |
